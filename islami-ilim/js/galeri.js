@@ -7,7 +7,8 @@ const galeriOgeleri = [
   { baslik: "Namaz Vakitleri Tablosu", aciklama: "Türkiye'nin büyük şehirleri için namaz vakitleri tablosu.",  tip: "infograf", boy: "kisa",  ikon: "📋", tarih: "Mart 2025" },
   { baslik: "Mescid-i Nebevi",        aciklama: "Peygamberimizin bizzat inşa ettiği kutsal mescid.",          tip: "fotograf", boy: "orta",  ikon: "🌙", tarih: "Aralık 2024" },
   { baslik: "Siyer Dersleri",         aciklama: "Peygamberimizin hayatını anlatan video ders serisi.",         tip: "video",    boy: "uzun",  ikon: "🎥", tarih: "Ocak 2025",   youtubeId: "" },
-  { baslik: "Hac Rehberi İnfografik", aciklama: "Hac ibadetinin nasıl yapılacağını anlatan görsel rehber.",   tip: "infograf", boy: "kisa",  ikon: "🗺️", tarih: "Kasım 2024" }
+  { baslik: "Hac Rehberi İnfografik", aciklama: "Hac ibadetinin nasıl yapılacağını anlatan görsel rehber.",   tip: "infograf", boy: "kisa",  ikon: "🗺️", tarih: "Kasım 2024" },
+  { baslik: "Hac Rehberi İnfografik", aciklama: "Hac ibadetinin nasıl yapılacağını anlatan görsel rehber.",   tip: "infograf", boy: "kisa",  ikon: "🗺️", tarih: "Kasım 2024" },
 ];
 const rozetSinif = { fotograf: 'rozet-fotograf', video: 'rozet-video', infograf: 'rozet-infograf', belgesel: 'rozet-belgesel' };
 let mevcutFiltre = 'tumu', acikIndex = 0, filtreliListe = [];
