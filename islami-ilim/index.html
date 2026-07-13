@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="İslami ilim, makaleler, dualar, tefsir ve hadis içerikleri.">
+  <title>İslami İlim | Anasayfa</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="konteyner header-ici">
+    <a href="index.html" class="logo">
+      <div style="width:44px;height:44px;background:#C8860A;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;font-family:'Amiri',serif;flex-shrink:0;">ع</div>
+      <div class="logo-yazi">
+        <span class="site-adi">İslami İlim</span>
+        <span class="site-slogan">Bilgi · Makaleler · Dersler</span>
+      </div>
+    </a>
+    <nav>
+      <ul id="nav-listesi">
+        <li><a href="index.html" class="aktif">Anasayfa</a></li>
+        <li><a href="makaleler.html">Makaleler</a></li> 
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="hakkimda.html">Hakkımda</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" onclick="menuAc()">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="konteyner hero-ic">
+    <p class="hero-arapca">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+    <h1>İslami İlim Dünyasına Hoş Geldiniz</h1>
+    <p class="hero-aciklama">Makaleler, dersler, kıssalar ve daha fazlası.<br>"İlim öğrenmek her Müslümana farzdır."</p>
+    <div class="hero-arama">
+      <input type="text" id="hero-arama-input" placeholder="Makale, dua, konu ara..." onkeydown="if(event.key==='Enter')aramaYap()">
+      <button onclick="aramaYap()">Ara</button>
+    </div>
+    <div class="hero-kategoriler">
+      <a href="makaleler.html?kategori=tefsir">Tefsir</a>
+      <a href="makaleler.html?kategori=hadis">Hadis</a>
+      <a href="makaleler.html?kategori=fikih">Fıkıh</a>
+      <a href="makaleler.html?kategori=siyer">Siyer</a>
+      <a href="makaleler.html?kategori=kissalar">Kıssalar</a>
+      <a href="makaleler.html?kategori=dualar">Dualar</a>
+    </div>
+    <div class="hero-istatistik">
+      <div class="stat"><strong>120+</strong><span>Makale</span></div>
+      <div class="stat"><strong>50+</strong><span>Dua</span></div>
+      <div class="stat"><strong>6</strong><span>Kategori</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GÜNÜN AYETİ & HADİSİ -->
+<section class="gunun-bolumu bolum" style="background:#fff;">
+  <div class="konteyner">
+    <div class="bolum-ust-btn">
+      <h2>Günün Ayeti & Hadisi</h2>
+      <button class="yenile-btn" onclick="yeniAyet()">↻ Yenile</button>
+    </div>
+    <div class="ayet-grid">
+      <div class="ayet-kutu" id="ayet-kutu">
+        <p class="ayet-arapca" id="ayet-arapca"></p>
+        <p class="ayet-meal"   id="ayet-meal"></p>
+        <span class="ayet-kaynak" id="ayet-kaynak"></span>
+      </div>
+      <div class="ayet-kutu hadis-kutu" id="hadis-kutu">
+        <p class="ayet-meal"   id="hadis-metin"></p>
+        <span class="ayet-kaynak" id="hadis-kaynak"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SON MAKALELER -->
+<section class="bolum">
+  <div class="konteyner">
+    <div class="bolum-baslik">
+      <span>Son Makaleler</span>
+      <a href="makaleler.html" class="tumu-btn">Tümünü gör →</a>
+    </div>
+    <div class="one-cikan-kart">
+      <div class="one-cikan-ikon">📖</div>
+      <div>
+        <span class="rozet tefsir">Tefsir</span>
+        <h3><a href="makaleler/fatiha-tefsiri.html">Fatiha Suresinin Tefsiri ve Derin Manası</a></h3>
+        <p>Her namazda okuduğumuz Fatiha Suresi'nin kelime kelime açıklaması ve derin manası hakkında kapsamlı bir rehber.</p>
+      </div>
+    </div>
+    <div class="kart-grid" id="son-makaleler-grid"></div>
+  </div>
+</section>
+
+<!-- ÖNE ÇIKAN -->
+<section class="bolum" style="background:#fff;border-top:1px solid var(--sinir);border-bottom:1px solid var(--sinir);">
+  <div class="konteyner">
+    <div class="bolum-baslik">
+      <span>Öne Çıkan İçerikler</span>
+      <a href="makaleler.html" class="tumu-btn">Tümünü gör →</a>
+    </div>
+    <div class="buyuk-kart">
+      <div>
+        <span class="etiket">⭐ Editörün Seçimi</span>
+        <h2>Kuran'ı Kerim'i Anlamak — Tefsir Okuma Rehberi</h2>
+        <p>Tefsir nedir, nasıl okunur? Başlangıçtan ileri seviyeye doğru tefsir okuma yöntemleri ve önerilen kaynaklar.</p>
+        <div class="buyuk-kart-alt">
+          <a href="makaleler/tefsir-rehberi.html" class="oku-btn">Makaleyi Oku</a>
+          <span style="font-size:13px;color:rgba(255,255,255,0.55);">20 Mart 2025</span>
+        </div>
+      </div>
+      <div class="buyuk-kart-ikon">📚</div>
+    </div>
+    <div class="ikili-kartlar">
+      <a href="https://youtube.com/playlist?list=PLYZ_41kpHIpzn3hYWembF8jSHqCKILeX8&si=Q1zlkhYmqQ9IvlCj" class="kucuk-kart">
+        <div class="kk-ikon">🌙</div>
+        <div>
+          <span class="rozet hadis">Hadis</span>
+          <h3>Kütüb-i Sitte — Altı Temel Hadis Kitabı</h3>
+          <span class="kart-tarih">18 Mart 2025</span>
+        </div>
+      </a>
+      <a href="https://youtube.com/playlist?list=PLYblxiEFBY-5tm6yHQFrnp6tToMoAa9Wc&si=4W2buuAuMndsLSWn" class="kucuk-kart">
+        <div class="kk-ikon">🕌</div>
+        <div>
+          <span class="rozet siyer">Siyer</span>
+          <h3>Mekke'den Medine'ye Hicret — Dönüm Noktası</h3>
+          <span class="kart-tarih">16 Mart 2025</span>
+        </div>
+      </a>
+    </div>
+    <a href="https://youtube.com/playlist?list=PLkR6ATcXIitDWx3FWXWSGlCcRc09UhmVM&si=pi4SAq3HJP86agfj" class="video-kart">
+      <div class="video-thumbnail"><div class="play-ikonu"></div></div>
+      <div>
+        <span class="rozet kissalar">Video Ders</span>
+        <h3>Tecvid Dersleri — Harflerin Doğru Telaffuzu</h3>
+        <span class="kart-tarih">32 dk · Başlangıç seviyesi</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- KATEGORİLER -->
+<section class="bolum">
+  <div class="konteyner">
+    <div class="bolum-baslik">
+      <span>Kategoriler</span>
+      <a href="makaleler.html" class="tumu-btn">Tümünü gör →</a>
+    </div>
+    <div class="kat-grid" id="kat-grid"></div>
+  </div>
+</section>
+
+<!-- DUALAR -->
+<section class="bolum" style="background:#fff;border-top:1px solid var(--sinir);">
+  <div class="konteyner">
+    <div class="bolum-baslik">
+      <span>Kısa Dualar & Zikirler</span>
+      <a href="makaleler.html?kategori=dualar" class="tumu-btn">Tümünü gör →</a>
+    </div>
+    <div class="dua-sekmeler">
+      <button class="sekme-btn aktif" onclick="duaFiltrele('tumu',this)">Tümü</button>
+      <button class="sekme-btn" onclick="duaFiltrele('sabah',this)">Sabah</button>
+      <button class="sekme-btn" onclick="duaFiltrele('aksam',this)">Akşam</button>
+      <button class="sekme-btn" onclick="duaFiltrele('yemek',this)">Yemek</button>
+      <button class="sekme-btn" onclick="duaFiltrele('uyku',this)">Uyku</button>
+      <button class="sekme-btn" onclick="duaFiltrele('zikir',this)">Zikir</button>
+    </div>
+    <div class="dua-grid" id="dua-grid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-ayet">
+    <p>وَقُل رَّبِّ زِدْنِي عِلْمًا</p>
+    <span>"De ki: Rabbim, ilmimi artır." — Taha Suresi, 20:114</span>
+  </div>
+  <div class="konteyner">
+    <div class="footer-grid">
+      <div class="footer-hakkinda">
+        <div class="footer-logo">
+          <div style="width:36px;height:36px;background:#C8860A;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;font-family:'Amiri',serif;">ع</div>
+          <span>İslami İlim</span>
+        </div>
+        <p>İlim öğrenmek her Müslümana farzdır. Bu site İslam'a hizmet ve ilmin yayılmasına vesile olmak amacıyla kurulmuştur.</p>
+        <div class="sosyal-linkler">
+          <a href="#" class="sosyal-btn" title="YouTube" rel="noopener noreferrer">▶</a>
+          <a href="#" class="sosyal-btn" title="WhatsApp" rel="noopener noreferrer">W</a>
+          <a href="#" class="sosyal-btn" title="Instagram" rel="noopener noreferrer">ig</a>
+        </div>
+      </div>
+      <div class="footer-kolon">
+        <h3>Sayfalar</h3>
+        <ul>
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="makaleler.html">Makaleler</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="hakkimda.html">Hakkımda</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="footer-kolon">
+        <h3>Kategoriler</h3>
+        <ul>
+          <li><a href="makaleler.html?kategori=tefsir">Tefsir</a></li>
+          <li><a href="makaleler.html?kategori=hadis">Hadis</a></li>
+          <li><a href="makaleler.html?kategori=fikih">Fıkıh</a></li>
+          <li><a href="makaleler.html?kategori=siyer">Siyer</a></li>
+          <li><a href="makaleler.html?kategori=kissalar">Kıssalar</a></li>
+          <li><a href="makaleler.html?kategori=dualar">Dualar</a></li>
+        </ul>
+      </div>
+      <div class="footer-kolon">
+        <h3>Diğer</h3>
+        <ul>
+          <li><a href="gizlilik.html">Gizlilik Politikası</a></li>
+          <li><a href="iletisim.html">Bize Ulaşın</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-alt">
+    <div class="konteyner">
+      <p class="telif">© <span id="footer-yil"></span> İslami İlim — Tüm hakları saklıdır.</p>
+      <div class="alt-linkler">
+        <a href="gizlilik.html">Gizlilik</a>
+        <a href="iletisim.html">İletişim</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/anasayfa.js"></script>
+</body>
+</html>

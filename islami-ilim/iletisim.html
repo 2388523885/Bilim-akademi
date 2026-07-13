@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim | İslami İlim</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="konteyner header-ici">
+    <a href="index.html" class="logo">
+      <div style="width:44px;height:44px;background:#C8860A;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;font-family:'Amiri',serif;flex-shrink:0;">ع</div>
+      <div class="logo-yazi"><span class="site-adi">İslami İlim</span><span class="site-slogan">Bilgi · Makaleler · Dersler</span></div>
+    </a>
+    <nav><ul><li><a href="index.html">Anasayfa</a></li><li><a href="makaleler.html">Makaleler</a></li><li><a href="galeri.html">Galeri</a></li><li><a href="hakkimda.html">Hakkımda</a></li><li><a href="iletisim.html" class="aktif">İletişim</a></li></ul></nav>
+    <button class="menu-btn" onclick="menuAc()">☰</button>
+  </div>
+</header>
+
+<div class="sayfa-basligi">
+  <div class="konteyner">
+    <h1>İletişim</h1>
+    <nav class="breadcrumb"><a href="index.html">Anasayfa</a> › İletişim</nav>
+  </div>
+</div>
+
+<div class="konteyner">
+  <div class="iletisim-sayfa">
+    <div class="form-bolumu">
+
+      <div class="ust-bilgi-kart">
+        <h2>İletişime Geçin</h2>
+        <p>Soru, öneri veya katkılarınız için formu doldurun. En kısa sürede dönüş yapılacaktır.</p>
+        <div class="iletisim-satir">
+          <div class="i-ikon">✉️</div>
+          <span>islami.ilim@ornek.com</span>
+        </div>
+      </div>
+
+      <div class="basari-kutu" id="basari-kutu">
+        <div class="basari-ikon">✅</div>
+        <h3>Mesajınız iletildi!</h3>
+        <p>En kısa sürede dönüş yapılacaktır. Cezakallahu hayran.</p>
+      </div>
+
+      <div class="form-kart" id="form-kart">
+        <h2>✉️ Mesaj Gönderin</h2>
+
+        <div class="form-grid">
+          <div class="form-grubu">
+            <label for="ad-soyad" class="form-label">Ad Soyad <span class="zorunlu">*</span></label>
+            <input type="text" id="ad-soyad" class="form-input" placeholder="Adınız ve soyadınız" maxlength="60" autocomplete="name">
+            <span class="hata-mesaji" id="hata-ad">Ad soyad zorunludur.</span>
+          </div>
+          <div class="form-grubu">
+            <label for="eposta" class="form-label">E-posta <span class="zorunlu">*</span></label>
+            <input type="email" id="eposta" class="form-input" placeholder="ornek@mail.com" maxlength="100" autocomplete="email">
+            <span class="hata-mesaji" id="hata-eposta">Geçerli bir e-posta girin.</span>
+          </div>
+        </div>
+
+        <div class="form-grubu">
+          <label for="konu" class="form-label">Konu <span class="zorunlu">*</span></label>
+          <select id="konu" class="form-input">
+            <option value="">— Konu seçin —</option>
+            <option value="soru">Soru Sormak İstiyorum</option>
+            <option value="oneri">Öneri & Geri Bildirim</option>
+            <option value="hata">Hata Bildirimi</option>
+            <option value="katki">İçerik Katkısı</option>
+            <option value="diger">Diğer</option>
+          </select>
+          <span class="hata-mesaji" id="hata-konu">Lütfen bir konu seçin.</span>
+        </div>
+
+        <div class="form-grubu">
+          <label for="mesaj" class="form-label">Mesajınız <span class="zorunlu">*</span></label>
+          <textarea id="mesaj" class="form-input" placeholder="Mesajınızı buraya yazın..." maxlength="1000" oninput="karakterSay()"></textarea>
+          <div class="karakter-sayac"><span id="karakter-sayac">0</span>/1000</div>
+          <span class="hata-mesaji" id="hata-mesaj">Mesaj en az 10 karakter olmalıdır.</span>
+        </div>
+
+        <div class="form-grubu">
+          <div class="onay-satiri">
+            <input type="checkbox" id="gizlilik-onay">
+            <label for="gizlilik-onay"><a href="gizlilik.html" target="_blank" rel="noopener noreferrer">Gizlilik Politikası</a>'nı okudum ve kişisel verilerimin işlenmesine onay veriyorum. <span class="zorunlu">*</span></label>
+          </div>
+          <span class="hata-mesaji" id="hata-onay">Devam etmek için onay vermelisiniz.</span>
+        </div>
+
+        <button class="gonder-btn" id="gonder-btn" onclick="formuGonder()">Mesajı Gönder</button>
+      </div>
+    </div>
+
+    <aside class="iletisim-yan">
+      <div class="bilgi-paneli">
+        <h3>İletişim Bilgileri</h3>
+        <div class="bilgi-satir"><div class="b-ikon">✉️</div><div><span class="b-baslik">E-posta</span><span class="b-deger">islami.ilim@ornek.com</span></div></div>
+        <div class="bilgi-satir"><div class="b-ikon">📍</div><div><span class="b-baslik">Konum</span><span class="b-deger">Diyarbakır, Türkiye</span></div></div>
+        <div class="bilgi-satir"><div class="b-ikon">⏰</div><div><span class="b-baslik">Yanıt Süresi</span><span class="b-deger">1–3 iş günü</span></div></div>
+        <div class="guvenlik-notu">🔒 Bilgileriniz hiçbir üçüncü tarafla paylaşılmaz. Yalnızca iletişim amacıyla kullanılır.</div>
+      </div>
+
+      <div class="sss-paneli">
+        <h3>Sık Sorulan Sorular</h3>
+        <div class="sss-item" onclick="sssAc(this)">
+          <div class="sss-soru">İçerik katkısı yapabilir miyim? <span>+</span></div>
+          <div class="sss-cevap">Evet! Güvenilir kaynaklara dayanan içeriklerinizi bize iletebilirsiniz. İnceleme sonrası yayınlanabilir.</div>
+        </div>
+        <div class="sss-item" onclick="sssAc(this)">
+          <div class="sss-soru">Hata bildirimi nasıl yapılır? <span>+</span></div>
+          <div class="sss-cevap">Formdaki "Hata Bildirimi" konusunu seçerek hatanın bulunduğu sayfa ve açıklamasını yazın.</div>
+        </div>
+        <div class="sss-item" onclick="sssAc(this)">
+          <div class="sss-soru">Reklam kabul ediyor musunuz? <span>+</span></div>
+          <div class="sss-cevap">Hayır. Site tamamen gönüllülük esasıyla yürütülmekte olup reklam kabul edilmemektedir.</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-ayet"><p>وَقُل رَّبِّ زِدْنِي عِلْمًا</p><span>"De ki: Rabbim, ilmimi artır." — Taha Suresi, 20:114</span></div>
+  <div class="konteyner"><div class="footer-grid">
+    <div class="footer-hakkinda"><div class="footer-logo"><div style="width:36px;height:36px;background:#C8860A;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;font-family:'Amiri',serif;">ع</div><span>İslami İlim</span></div><p>İlim öğrenmek her Müslümana farzdır.</p></div>
+    <div class="footer-kolon"><h3>Sayfalar</h3><ul><li><a href="index.html">Anasayfa</a></li><li><a href="makaleler.html">Makaleler</a></li><li><a href="galeri.html">Galeri</a></li><li><a href="hakkimda.html">Hakkımda</a></li><li><a href="iletisim.html">İletişim</a></li></ul></div>
+    <div class="footer-kolon"><h3>Kategoriler</h3><ul><li><a href="makaleler.html?kategori=tefsir">Tefsir</a></li><li><a href="makaleler.html?kategori=hadis">Hadis</a></li><li><a href="makaleler.html?kategori=fikih">Fıkıh</a></li></ul></div>
+    <div class="footer-kolon"><h3>Diğer</h3><ul><li><a href="gizlilik.html">Gizlilik</a></li><li><a href="iletisim.html">İletişim</a></li></ul></div>
+  </div></div>
+  <div class="footer-alt"><div class="konteyner"><p class="telif">© <span id="footer-yil"></span> İslami İlim</p><div class="alt-linkler"><a href="gizlilik.html">Gizlilik</a></div></div></div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/iletisim.js"></script>
+</body>
+</html>

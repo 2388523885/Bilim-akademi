@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri | İslami İlim</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="konteyner header-ici">
+    <a href="index.html" class="logo">
+      <div style="width:44px;height:44px;background:#C8860A;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;font-family:'Amiri',serif;flex-shrink:0;">ع</div>
+      <div class="logo-yazi"><span class="site-adi">İslami İlim</span><span class="site-slogan">Bilgi · Makaleler · Dersler</span></div>
+    </a>
+    <nav><ul><li><a href="index.html">Anasayfa</a></li><li><a href="makaleler.html">Makaleler</a></li><li><a href="galeri.html" class="aktif">Galeri</a></li><li><a href="hakkimda.html">Hakkımda</a></li><li><a href="iletisim.html">İletişim</a></li></ul></nav>
+    <button class="menu-btn" onclick="menuAc()">☰</button>
+  </div>
+</header>
+
+<div class="sayfa-basligi">
+  <div class="konteyner">
+    <h1>Galeri</h1>
+    <nav class="breadcrumb"><a href="index.html">Anasayfa</a> › Galeri</nav>
+  </div>
+</div>
+
+<div class="konteyner tek-sutun">
+  <div class="filtre-bar">
+    <div class="filtre-sekmeler">
+      <button class="sekme aktif" onclick="filtrele('tumu',this)">Tümü</button>
+      <button class="sekme" onclick="filtrele('fotograf',this)">📷 Fotoğraf</button>
+      <button class="sekme" onclick="filtrele('video',this)">🎬 Video</button>
+      <button class="sekme" onclick="filtrele('infograf',this)">📊 İnfografik</button>
+      <button class="sekme" onclick="filtrele('belgesel',this)">📽️ Belgesel</button>
+    </div>
+    <span style="font-size:13px;color:#aaa;" id="galeri-sonuc"></span>
+  </div>
+  <div class="galeri-grid" id="galeri-grid"></div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <div class="lb-kapsayici">
+    <button class="lb-kapat-btn" onclick="lightboxKapat()">✕</button>
+    <button class="lb-onceki" onclick="lightboxGec(-1)">‹</button>
+    <button class="lb-sonraki" onclick="lightboxGec(1)">›</button>
+    <div class="lb-icerik">
+      <div class="lb-gorsel" id="lb-gorsel"></div>
+      <div class="lb-bilgi">
+        <span class="galeri-rozet" id="lb-rozet"></span>
+        <h2 id="lb-baslik"></h2>
+        <p  id="lb-aciklama"></p>
+        <span class="lb-tarih" id="lb-tarih"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-ayet"><p>وَقُل رَّبِّ زِدْنِي عِلْمًا</p><span>"De ki: Rabbim, ilmimi artır." — Taha Suresi, 20:114</span></div>
+  <div class="konteyner"><div class="footer-grid">
+    <div class="footer-hakkinda"><div class="footer-logo"><div style="width:36px;height:36px;background:#C8860A;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;font-family:'Amiri',serif;">ع</div><span>İslami İlim</span></div><p>İlim öğrenmek her Müslümana farzdır.</p></div>
+    <div class="footer-kolon"><h3>Sayfalar</h3><ul><li><a href="index.html">Anasayfa</a></li><li><a href="makaleler.html">Makaleler</a></li><li><a href="galeri.html">Galeri</a></li><li><a href="hakkimda.html">Hakkımda</a></li><li><a href="iletisim.html">İletişim</a></li></ul></div>
+    <div class="footer-kolon"><h3>Kategoriler</h3><ul><li><a href="makaleler.html?kategori=tefsir">Tefsir</a></li><li><a href="makaleler.html?kategori=hadis">Hadis</a></li><li><a href="makaleler.html?kategori=fikih">Fıkıh</a></li></ul></div>
+    <div class="footer-kolon"><h3>Diğer</h3><ul><li><a href="gizlilik.html">Gizlilik</a></li><li><a href="iletisim.html">İletişim</a></li></ul></div>
+  </div></div>
+  <div class="footer-alt"><div class="konteyner"><p class="telif">© <span id="footer-yil"></span> İslami İlim</p><div class="alt-linkler"><a href="iletisim.html">İletişim</a></div></div></div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/galeri.js"></script>
+</body>
+</html>
